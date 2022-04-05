@@ -11,7 +11,9 @@ steps:
   - name: gcr.io/cloud-builders/gcloud
     id  : DEPLOY
     args:
-      - deploy
+      - run
+      - services
+      - update
       - $_SERVICE_NAME
       - --project=$_SERVICE_PROJECT
       - --region=$_SERVICE_REGION
