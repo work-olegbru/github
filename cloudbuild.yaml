@@ -24,7 +24,7 @@ steps:
 substitutions:
     _SERVICE_IMAGE    : us-central1-docker.pkg.dev/${PROJECT_ID}/${_DOCKER_REGISTRY}/${_DOCKER_IMAGENAME}:${SHORT_SHA}
     _SERVICE_REGION   : us-central1
-    _SERVICE_PROJECT  : test
-    _SERVICE_NAME     : test-app
-    _DOCKER_REGISTRY  : test-docker-hub
+    _SERVICE_PROJECT  : test-cloud-run
+    _SERVICE_NAME     : test-trigger
+    _DOCKER_REGISTRY  : docker-repository
     _DOCKER_IMAGENAME : docker-test
