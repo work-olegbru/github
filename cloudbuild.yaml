@@ -15,12 +15,13 @@ steps:
       - services
       - update
       - $_SERVICE_PROJECT
+      - --project=$_SERVICE_NAME
       - --region=$_SERVICE_REGION
       - --image=$_SERVICE_IMAGE
 substitutions:
     _SERVICE_IMAGE    : us-central1-docker.pkg.dev/${PROJECT_ID}/${_DOCKER_REGISTRY}/${_DOCKER_IMAGENAME}
     _SERVICE_REGION   : us-central1
     _SERVICE_PROJECT  : test-cloud-run
-    _SERVICE_NAME     : test-trigger
+    _SERVICE_NAME     : worker-346314
     _DOCKER_REGISTRY  : docker-repository
     _DOCKER_IMAGENAME : docker-test
