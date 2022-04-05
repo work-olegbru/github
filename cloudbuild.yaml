@@ -3,12 +3,10 @@ steps:
   - name: gcr.io/cloud-builders/docker
     id  : BUILD
     args: ['build', '-t', '$_SERVICE_IMAGE', '.', '-f', 'dockerfile']
-
 # Docker Push Image to Artifact Registry
   - name: gcr.io/cloud-builders/docker
     id  : PUSH
     args: ['push', '$_SERVICE_IMAGE']
-
 # Docker Deploy image to Cloud Run
   - name: gcr.io/cloud-builders/gcloud
     id  : DEPLOY
@@ -20,7 +18,6 @@ steps:
       - --project=$_SERVICE_PROJECT
       - --region=$_SERVICE_REGION
       - --image=$_SERVICE_IMAGE
-
 substitutions:
     _SERVICE_IMAGE    : us-central1-docker.pkg.dev/${PROJECT_ID}/${_DOCKER_REGISTRY}/${_DOCKER_IMAGENAME}
     _SERVICE_REGION   : us-central1
